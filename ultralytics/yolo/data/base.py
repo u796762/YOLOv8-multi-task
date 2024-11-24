@@ -364,3 +364,6 @@ class BaseDataset(Dataset):
             )
         """
         raise NotImplementedError
+
+    def get_multi_labels(sef):
+        raise NotImplementedError
