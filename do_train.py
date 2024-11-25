@@ -14,12 +14,13 @@ model = YOLO(
 # You need to change the model path for yours.
 # The model files saved under "./ultralytics/models/v8"
 model.train(
-    data=f"{repo_dir}/datasets/DetSeg/yolo_datasets/toy_dataset_3430/yolo_dataset.yaml",
+    #data=f"{repo_dir}/datasets/DetSeg/yolo_datasets/toy_dataset_3430/yolo_dataset.yaml",
+    data=f"{repo_dir}/datasets/DetSeg/yolo_datasets/toy_dataset_24/yolo_dataset.yaml",
     # f"{repo_dir}/ultralytics/datasets/bdd-multi-toy.yaml",
     batch=4,
     epochs=30,
     imgsz=(640, 640),
-    device=[0],
+    device="cpu", #[0],
     name="v4_640",
     val=True,
     task="multi",
