@@ -451,7 +451,7 @@ class MultiModel(MultiBaseModel):
         # Define model
         ch = self.yaml['ch'] = self.yaml.get('ch', ch)  # input channels
         if nc and nc != self.yaml['tnc']:
-            LOGGER.info(f"Overriding model.yaml nc={self.yaml['tnc']} with nc={tnc}")
+            LOGGER.info(f"Overriding model.yaml nc={self.yaml['tnc']} with nc={nc}")
             self.yaml['tnc'] = nc  # override yaml value
         self.model, self.save = parse_model(deepcopy(self.yaml), ch=ch, verbose=verbose)  # model, savelist
         self.names = {i: f'{i}' for i in range(self.yaml['tnc'])}  # default names dict
